@@ -29,39 +29,49 @@
     </div>
     <div class="output-container">
       <h3>Output</h3>
+      
       <div class=output>
-        {@html outputHtml}
+        {#if outputHtml === ''}
+            Output will appear here
+        {:else}
+            {@html outputHtml}
+        {/if}
       </div>
     </div>
   </main>
   
   <style>
+    
     main {
       display: flex;
       gap: 20px;
+      height: 100vh;
     }
   
     .input-container {
       flex: 1;
       display: flex;
       flex-direction: column;
+      
     }
   
     .output-container {
       flex: 1;
+      
     }
   
     .output {
       border: 1px solid #ccc;
-      height: 200px;
+      height: 50%; /* Set the height to 100% */
       overflow: auto;
       padding: 10px;
     }
   
     .input {
-      height: 200px;
+      height: 50%; /* Set the height to 100% */
       border: 1px solid #ccc;
       padding: 10px;
     }
   </style>
+  
   
