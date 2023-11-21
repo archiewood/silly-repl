@@ -1,4 +1,6 @@
 <script>
+    import { afterUpdate } from 'svelte';
+  
     let inputCode = '';
     let outputHtml = '';
   
@@ -15,7 +17,23 @@
         outputHtml = `Error: ${error.message}`;
       }
     };
+  
+    // Run evaluateCode after each update (keystroke)
+    afterUpdate(evaluateCode);
   </script>
+  
+  <main>
+    <div class="input-container">
+      <h3>Input</h3>
+      <textarea class=input bind:value={inputCode} placeholder="Enter HTML" on:input={evaluateCode}></textarea>
+    </div>
+    <div class="output-container">
+      <h3>Output</h3>
+      <div class=output>
+        {@html outputHtml}
+      </div>
+    </div>
+  </main>
   
   <style>
     main {
@@ -23,28 +41,27 @@
       gap: 20px;
     }
   
-    textarea {
+    .input-container {
       flex: 1;
-      height: 200px;
-    }
-  
-    button {
-      flex: 0;
+      display: flex;
+      flex-direction: column;
     }
   
     .output-container {
       flex: 1;
     }
-  </style>
   
-  <main>
-    <textarea bind:value={inputCode} placeholder="Enter HTML code"></textarea>
-    <button on:click={evaluateCode}>Run</button>
-    {#if outputHtml}
-      <div class="output-container">
-        <h3>Output:</h3>
-        {@html outputHtml}
-      </div>
-    {/if}
-  </main>
+    .output {
+      border: 1px solid #ccc;
+      height: 200px;
+      overflow: auto;
+      padding: 10px;
+    }
+  
+    .input {
+      height: 200px;
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+  </style>
   
