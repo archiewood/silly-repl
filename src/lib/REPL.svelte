@@ -1,40 +1,23 @@
 <script>
-    import { afterUpdate } from 'svelte';
-  
+    import SvelteMarkdown from 'svelte-markdown'
     let inputCode = '';
-    let outputHtml = '';
-  
-    const compile = (input) => {
-      // Placeholder for the compile function
-      // You can replace this with your actual compilation logic
-      return input;
-    };
-  
-    const evaluateCode = () => {
-      try {
-        outputHtml = compile(inputCode);
-      } catch (error) {
-        outputHtml = `Error: ${error.message}`;
-      }
-    };
-  
-    // Run evaluateCode after each update (keystroke)
-    afterUpdate(evaluateCode);
   </script>
   
   <main>
     <div class="input-container">
       <h3>Input</h3>
-      <textarea class=input bind:value={inputCode} placeholder="Enter HTML" on:input={evaluateCode}></textarea>
+      <textarea class=input bind:value={inputCode} placeholder="Write Markdown" ></textarea>
     </div>
     <div class="output-container">
       <h3>Output</h3>
       
       <div class=output>
-        {#if outputHtml === ''}
-            Output will appear here
+        {#if inputCode === ''}
+            <div class=default-text>
+                Output will appear here
+            </div>
         {:else}
-            {@html outputHtml}
+            <SvelteMarkdown source={inputCode}/>
         {/if}
       </div>
     </div>
@@ -71,6 +54,10 @@
       height: 50%; /* Set the height to 100% */
       border: 1px solid #ccc;
       padding: 10px;
+    }
+
+    .default-text {
+        color: #777;
     }
   </style>
   
