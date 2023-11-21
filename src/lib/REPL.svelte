@@ -3,7 +3,7 @@
     let inputCode = '';
   </script>
   
-  <main>
+  <article>
     <div class="input-container">
       <h3>Input</h3>
       <textarea class=input bind:value={inputCode} placeholder="Write Markdown" ></textarea>
@@ -21,44 +21,53 @@
         {/if}
       </div>
     </div>
-  </main>
+  </article>
   
   <style>
     
-    main {
-      display: flex;
-      gap: 20px;
-      height: 100vh;
-    }
-  
-    .input-container {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      
-    }
-  
-    .output-container {
-      flex: 1;
-      
-    }
-  
-    .output {
-      border: 1px solid #ccc;
-      height: 50%; /* Set the height to 100% */
-      overflow: auto;
-      padding: 10px;
-    }
-  
-    .input {
-      height: 50%; /* Set the height to 100% */
-      border: 1px solid #ccc;
-      padding: 10px;
-    }
+    * {
+  box-sizing: border-box;
+}
+
+article {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+h3 {
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 1em;
+
+}
+
+.input-container, .output-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.input, .output {
+  flex: 1;
+  border: 1px solid #ccc;
+  padding: 10px;
+  overflow: auto;
+}
 
     .default-text {
         color: #777;
     }
+
+    @media (max-width: 600px) {
+  article {
+    flex-direction: column;
+  }
+}
   </style>
   
   

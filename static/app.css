@@ -1,0 +1,61 @@
+/* FILEPATH: /Users/archie/Projects/repl/src/app.css */
+
+/* Reset default styles */
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set default font and colors */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #fff;
+}
+
+/* Header styles */
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Paragraph styles */
+p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+/* List styles */
+ul, ol {
+    margin-bottom: 10px;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+/* Link styles */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+
+pre {
+    background-color: #eee;
+    padding: 10px;
+    border-radius: 5px;
+}   
+
+code {
+    background-color: #eee;
+    padding: 2px;
+    border-radius: 5px;
+}

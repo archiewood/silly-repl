@@ -1,22 +1,33 @@
 <script>
-    import REPL from '$lib/REPL.svelte';
+  import REPL from "$lib/REPL.svelte";
 </script>
 
-<h1>Silly Markdown REPL</h1>
+<main>
+  <h1>Silly Markdown REPL</h1>
 
-<p>The code for this REPL is in <a href="https://github.com/archiewood/silly-repl">this repo</a>.</p>
+  <p>
+    The code for this REPL is in <a
+      href="https://github.com/archiewood/silly-repl">this repo</a
+    >.
+  </p>
 
-<REPL/>
-
+  <REPL />
+</main>
 
 <style>
-    h1 {
-        /* center */
-        text-align: center;
-    }
+  h1 {
+    /* center */
+    text-align: center;
+    margin-top: 1em;
+  }
 
-    p {
-        /* center */
-        text-align: center;
-    }
+  main {
+    height: 95vh;
+    display: flex;  
+    flex-direction: column;
+  }
+  p {
+    /* center */
+    text-align: center;
+  }
 </style>
