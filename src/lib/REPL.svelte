@@ -71,6 +71,10 @@
     overflow: auto; /* Add a scrollbar when necessary */
   }
 
+  textarea {
+    font-size: 16px;
+  }
+
   .input,
   .output {
     flex: 1;
