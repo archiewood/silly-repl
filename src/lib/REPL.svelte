@@ -33,7 +33,6 @@
   </div>
   <div class="output-container">
     <h3>Output</h3>
-
     <div class="output">
       {#if inputCode === ""}
         <div class="default-text">Output will appear here</div>
@@ -84,6 +83,10 @@
     resize: none;
     border-radius: 5px;
     margin: 5px;
+  }
+
+  .output {
+    padding-top: 0;
   }
 
   .default-text {
