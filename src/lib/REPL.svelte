@@ -91,6 +91,7 @@
 
   .default-text {
     color: #777;
+    margin-top: 10px;
   }
 
   @media (max-width: 600px) {
