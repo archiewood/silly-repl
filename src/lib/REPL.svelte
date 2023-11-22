@@ -67,8 +67,6 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    margin-left: 1em;
-    margin-right: 1em;
     max-height: 100vh; /* Set a maximum height */
     overflow: auto; /* Add a scrollbar when necessary */
   }
@@ -81,6 +79,7 @@
     overflow: auto;
     resize: none;
     border-radius: 5px;
+    margin: 5px;
   }
 
   .default-text {
